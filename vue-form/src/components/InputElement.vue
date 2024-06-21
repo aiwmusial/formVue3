@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue';
+import { computed } from 'vue';
 import { useInputStore } from "@/stores/InputStore";
 
 const inputStore = useInputStore();
@@ -15,14 +15,6 @@ const searchMatches = computed(() =>
     inputStore.searchText &&
     inputStore.inputs.some(input => input.inputValue.includes(inputStore.searchText))
 );
-
-watch(filteredFields, (newFields) => {
-    console.log("Filtered fields", newFields)
-})
-
-watch(searchMatches, (matches) => {
-  console.log("Search Matches:", matches);
-});
 
 const { inputs, addField, removeField, updateField } = inputStore;
 </script>

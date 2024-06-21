@@ -11,9 +11,9 @@ interface InputField {
 export const useInputStore = defineStore('inputStore', {
   state: () => ({
     inputs: [
-      {id: 1, inputValue: "Lorem ipsum", charCount: 55, vowelCount: 15},
-      {id: 2, inputValue: "Dolor ipsum", charCount: 22, vowelCount: 11},
-      {id: 3, inputValue: "Sit ipsum", charCount: 56, vowelCount: 23},
+      {id: Date.now(), inputValue: "", charCount: 0, vowelCount: 0},
+      {id: Date.now(), inputValue: "", charCount: 0, vowelCount: 0},
+      {id: Date.now(), inputValue: "", charCount: 0, vowelCount: 0},
     ] as InputField[],
     searchText: "",
   }),
