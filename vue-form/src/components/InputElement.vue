@@ -24,6 +24,7 @@ const { inputs, addField, removeField, updateField } = inputStore;
     <div class="flex justify-center mt-6">
         <div class="grid w-3/4 max-w-screen-lg px-4 justify-items-stretch">
             <input
+                id="searchBar"
                 type="text"
                 v-model="searchText"
                 placeholder="Search"
@@ -37,7 +38,8 @@ const { inputs, addField, removeField, updateField } = inputStore;
                     class="flex flex-col items-center justify-center mb-2 space-y-2 border-2 rounded-lg sm:space-x-2 sm:space-y-0 border-significant-red"
                 >
                     <div class="flex justify-between w-full sm:flex-row">            
-                        <input 
+                        <input
+                            :id="input.id" 
                             type="text" 
                             :value="input.inputValue"
                             @input="event => updateField(input.id, event.target.value)"
