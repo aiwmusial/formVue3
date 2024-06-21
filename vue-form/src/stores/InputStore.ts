@@ -24,7 +24,7 @@ export const useInputStore = defineStore('inputStore', {
       const lowerCaseSearchText = state.searchText.toLowerCase();
       return state.inputs.map(input => ({
         ...input,
-        highlight: input.inputValue.toLowerCase().includes(state.searchText)
+        highlight: input.inputValue.toLowerCase().includes(lowerCaseSearchText)
       }))
     }
 

@@ -27,7 +27,7 @@ const { inputs, addField, removeField, updateField } = inputStore;
                 v-model="searchText"
                 placeholder="Search"
                 :class="{ 'bg-highlight-green': searchMatches }" 
-                class="w-5/6 p-3 m-2 border-2 rounded-lg border-item-navy bg-bg-light text-item-navy justify-self-center"
+                class="w-5/6 p-3 m-2 border-2 rounded-lg border-item-navy bg-bg-light text-item-navy justify-self-center focus:outline-none focus:ring"
             />    
     
             <form @submit.prevent class="w-full mt-4">            
@@ -42,7 +42,7 @@ const { inputs, addField, removeField, updateField } = inputStore;
                             :value="input.inputValue"
                             @input="event => updateField(input.id, event.target.value)"
                             :class="{ 'bg-highlight-green': input.highlight }"
-                            class="w-5/6 p-2 m-2 border-2 rounded-lg border-item-navy bg-bg-light text-item-navy"
+                            class="w-5/6 p-2 m-2 border-2 rounded-lg border-item-navy bg-bg-light text-item-navy focus:outline-none focus:ring"
                         >
                         <button 
                             type="button"
