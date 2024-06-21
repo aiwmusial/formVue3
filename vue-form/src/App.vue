@@ -8,7 +8,7 @@ import InputElement from "./components/InputElement.vue";
 </script>
 
 <template>
-  <div class="container flex flex-col min-h-screen font-Roboto bg-bg-light">
+  <div class="flex flex-col min-h-screen font-Roboto bg-bg-light">
     <SiteHeader />
     
     <!-- <div class="mt-6 items-list"> -->
