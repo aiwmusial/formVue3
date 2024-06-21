@@ -2,11 +2,11 @@ import { defineStore } from "pinia";
 import { v4 as uuidv4 } from "uuid";
 
 interface InputField {
-  id: String, 
-  inputValue: String, 
-  charCount: Number, 
-  vowelCount: Number,
-  highlight?: Boolean
+  id: string, 
+  inputValue: string, 
+  charCount: number, 
+  vowelCount: number,
+  highlight?: boolean
 }
 
 export const useInputStore = defineStore('inputStore', {
@@ -41,12 +41,12 @@ export const useInputStore = defineStore('inputStore', {
         this.inputs.push(newField);
       }
     },
-    removeField(id:String) {
+    removeField(id:string) {
       if(this.inputs.length >1) {
         this.inputs = this.inputs.filter(input => input.id !== id);
       }
     },
-    updateField(id:String, value:String) {
+    updateField(id:string, value:string) {
       const field = this.inputs.find(input => input.id === id);
       if(field) {
         field.inputValue = value;
@@ -54,7 +54,7 @@ export const useInputStore = defineStore('inputStore', {
         field.vowelCount = (value.match(/[aeiou]/gi) || []).length;
       }
     },
-    updateSearchText(value: String) {
+    updateSearchText(value: string) {
       this.searchText = value;
     }
   }
