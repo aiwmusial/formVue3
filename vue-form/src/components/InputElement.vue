@@ -38,14 +38,14 @@ const { inputs, addField, removeField, updateField } = inputStore;
                 <div class="flex justify-between w-full sm:flex-row">            
                     <input 
                         type="text" 
-                        v-model="input.inputValue"
+                        :value="input.inputValue"
                         @input="event => updateField(input.id, event.target.value)"
                         :class="{ 'bg-highlight-green': input.highlight }"
                         class="p-2 m-2 border rounded-lg border-item-navy sm:w-1/2 bg-bg-light text-item-navy"
                     >
                     <button 
                         type="button"
-                        @click="() => removeField(input.id)"
+                        @click="removeField(input.id)"
                     >
                         <i class="fas fa-trash text-significant-red"></i>
                     </button>

@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia'
+import { v4 as uuidv4 } from "uuid";
 
 interface InputField {
-  id: Number, 
+  id: String, 
   inputValue: String, 
   charCount: Number, 
   vowelCount: Number,
@@ -11,18 +12,19 @@ interface InputField {
 export const useInputStore = defineStore('inputStore', {
   state: () => ({
     inputs: [
-      {id: Date.now(), inputValue: "", charCount: 0, vowelCount: 0},
-      {id: Date.now(), inputValue: "", charCount: 0, vowelCount: 0},
-      {id: Date.now(), inputValue: "", charCount: 0, vowelCount: 0},
+      {id: uuidv4(), inputValue: "", charCount: 0, vowelCount: 0},
+      {id: uuidv4(), inputValue: "", charCount: 0, vowelCount: 0},
+      {id: uuidv4(), inputValue: "", charCount: 0, vowelCount: 0},
     ] as InputField[],
     searchText: "",
   }),
   getters: {
     filteredFields(state): InputField[] {
       if(!state.searchText) return state.inputs;
+      const lowerCaseSearchText = state.searchText.toLowerCase();
       return state.inputs.map(input => ({
         ...input,
-        highlight: input.inputValue.includes(state.searchText)
+        highlight: input.inputValue.toLowerCase().includes(state.searchText)
       }))
     }
 
@@ -31,7 +33,7 @@ export const useInputStore = defineStore('inputStore', {
     addField() {
       if(this.inputs.length < 10) {
         const newField = {
-                            id: Date.now(), 
+                            id: uuidv4(), 
                             inputValue: "",
                             charCount: 0,
                             vowelCount: 0
@@ -39,12 +41,12 @@ export const useInputStore = defineStore('inputStore', {
         this.inputs.push(newField);
       }
     },
-    removeField(id:Number) {
+    removeField(id:String) {
       if(this.inputs.length >1) {
         this.inputs = this.inputs.filter(input => input.id !== id);
       }
     },
-    updateField(id:Number, value:String) {
+    updateField(id:String, value:String) {
       const field = this.inputs.find(input => input.id === id);
       if(field) {
         field.inputValue = value;
