@@ -10,7 +10,7 @@ export default {
           "bg-light": "#f3eff5",
           "bg-celeste": "#9EC7E5",
           "item-navy": "#1D4180",
-          "hightlight-green": "#72B01D",
+          "highlight-green": "#72B01D",
           "significant-red": "#BF0902",
           "text-dark": "#0d0a0b"
         }
@@ -21,7 +21,6 @@ export default {
       container: {
         padding: "2rem",
         center: true
-
       }
   },
   plugins: [],
