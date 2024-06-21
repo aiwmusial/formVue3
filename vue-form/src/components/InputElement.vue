@@ -17,6 +17,7 @@ const searchMatches = computed(() =>
 );
 
 const { inputs, addField, removeField, updateField } = inputStore;
+
 </script>
 
 <template>
@@ -29,7 +30,6 @@ const { inputs, addField, removeField, updateField } = inputStore;
                 :class="{ 'bg-highlight-green': searchMatches }" 
                 class="w-5/6 p-3 m-2 border-2 rounded-lg border-item-navy bg-bg-light text-item-navy justify-self-center focus:outline-none focus:ring"
             />    
-    
             <form @submit.prevent class="w-full mt-4">            
                 <div
                     v-for="input in filteredFields"
@@ -66,5 +66,4 @@ const { inputs, addField, removeField, updateField } = inputStore;
             </form>
         </div>
     </div>
-
 </template>
