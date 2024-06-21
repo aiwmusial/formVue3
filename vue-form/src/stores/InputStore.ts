@@ -41,12 +41,12 @@ export const useInputStore = defineStore('inputStore', {
         this.inputs.push(newField);
       }
     },
-    removeField(id:string) {
-      if(this.inputs.length >1) {
+    removeField(id: string) {
+      if(this.inputs.length > 1) {
         this.inputs = this.inputs.filter(input => input.id !== id);
       }
     },
-    updateField(id:string, value:string) {
+    updateField(id: string, value: string) {
       const field = this.inputs.find(input => input.id === id);
       if(field) {
         field.inputValue = value;
@@ -54,7 +54,7 @@ export const useInputStore = defineStore('inputStore', {
         field.vowelCount = (value.match(/[aeiou]/gi) || []).length;
       }
     },
-    updateSearchText(value: string) {
+    updateSearchText(value:string) {
       this.searchText = value;
     }
   }

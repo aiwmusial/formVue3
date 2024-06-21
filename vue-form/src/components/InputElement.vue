@@ -45,7 +45,7 @@ const { inputs, addField, removeField, updateField } = inputStore;
                             @input="event => updateField(input.id, event.target.value)"
                             :class="{ 'bg-highlight-green': input.highlight }"
                             class="w-5/6 p-2 m-2 border-2 rounded-lg border-item-navy bg-bg-light text-item-navy focus:outline-none focus:ring"
-                        >
+                            >
                         <button 
                             type="button"
                             @click="removeField(input.id)"
@@ -68,4 +68,4 @@ const { inputs, addField, removeField, updateField } = inputStore;
             </form>
         </div>
     </div>
-</template>
+</template> 
